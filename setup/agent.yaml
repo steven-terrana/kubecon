@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jenkins-agent
+  name: jenkins-agent
+  namespace: demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins-agent
+  template:
+    metadata:
+      labels:
+        app: jenkins-agent
+    spec:
+      volumes:
+      - name: docker-storage 
+        emptyDir: {}
+      - name: workspaces
+        emptyDir: {}
+      imagePullSecrets:
+      - name: github-package-registry
+      containers:
+      - env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
+        - name: JENKINS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: jenkins-api-token
+        - name: JENKINS_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: jenkins-admin-user
+              name: jenkins
+        - name: JENKINS_URL
+          value: http://jenkins:8080
+        - name: JENKINS_TUNNEL
+          value: jenkins-agent:50000
+        - name: EXECUTORS
+          value: "1"
+        image: docker.pkg.github.com/boozallen/sdp-images/jenkins-agent:3.23
+        imagePullPolicy: Always
+        name: jenkins-agent
+        securityContext:
+          privileged: true 
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+          requests:
+            cpu: "50m"
+            memory: "256Mi"
+        volumeMounts: 
+        - mountPath: /var/lib/docker
+          name: docker-storage
+        - mountPath: /root/workspace
+          name: workspaces

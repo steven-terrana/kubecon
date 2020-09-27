@@ -1,0 +1,17 @@
+parallel "Code Quality": { 
+    unit_test(); 
+    static_code_analysis() 
+}, "Application Dependency Scan": {
+    application_dependency_scan() 
+}
+
+build() 
+// scan_container_image() 
+
+deploy_to prod 
+
+parallel "Penetration Test": {
+    penetration_test()
+}, "Accessibility Compliance": {
+    accessibility_compliance_scan()
+}
