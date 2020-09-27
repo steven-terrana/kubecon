@@ -24,9 +24,10 @@ libraries{
   }
   kubernetes{
     k8s_credential = "kubeconfig"
-    helm_configuration_repository = "https://github.com/steven-terrana/dummy-vuln-app" 
+    helm_configuration_repository = "https://github.com/steven-terrana/dummy-vuln-app"
+    helm_configuration_repository_branch = "main"
     helm_configuration_repository_credential = "github" 
-    helm_chart_start_path = "chart"
+    helm_configuration_repository_start_path = "chart"
     k8s_context = "gke_gleaming-block-228801_us-central1-c_k8satl-1"
     promote_previous_image = false 
   }
