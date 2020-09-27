@@ -28,7 +28,7 @@ libraries{
     helm_configuration_repository_branch = "main"
     helm_configuration_repository_credential = "github" 
     helm_configuration_repository_start_path = "chart"
-    k8s_context = "gke_gleaming-block-228801_us-central1-c_k8satl-1"
+    k8s_context = "default-context"
     promote_previous_image = false 
   }
   owasp_zap{
