@@ -23,10 +23,11 @@ libraries{
     cred = "sysdig-secure-api"
   }
   kubernetes{
-    k8s_credential = "kubeconfig" 
-    helm_configuration_repository = "https://github.com/steven-terrana/sysdig-webinar" 
+    k8s_credential = "kubeconfig"
+    helm_configuration_repository = "https://github.com/steven-terrana/dummy-vuln-app" 
     helm_configuration_repository_credential = "github" 
-    k8s_context = "service-account-context"
+    helm_chart_start_path = "chart"
+    k8s_context = "gke_gleaming-block-228801_us-central1-c_k8satl-1"
     promote_previous_image = false 
   }
   owasp_zap{
