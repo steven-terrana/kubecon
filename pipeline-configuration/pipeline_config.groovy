@@ -23,17 +23,19 @@ libraries{
     cred = "sysdig-secure-api"
   }
   kubernetes{
-    k8s_credential = "kubeconfig" 
-    helm_configuration_repository = "https://github.com/steven-terrana/sysdig-webinar" 
+    k8s_credential = "kubeconfig"
+    helm_configuration_repository = "https://github.com/steven-terrana/dummy-vuln-app"
+    helm_configuration_repository_branch = "main"
     helm_configuration_repository_credential = "github" 
-    k8s_context = "service-account-context"
+    helm_configuration_repository_start_path = "chart"
+    k8s_context = "default-context"
     promote_previous_image = false 
   }
   owasp_zap{
-    target = "http://54.172.14.65:31165"
+    target = "http://prod-dummy-vuln-app:5000"
   }
   google_lighthouse{
-    url = "http://54.172.14.65:31165"
+    url = "http://prod-dummy-vuln-app:5000"
   }
 }
 
