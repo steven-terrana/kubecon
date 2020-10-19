@@ -41,3 +41,11 @@ libraries{
 application_environments{
   prod
 }
+
+template_methods{
+  unit_test
+  static_code_analysis
+  application_dependency_scan
+  penetration_testing
+  accessibility_compliance_scan
+}
