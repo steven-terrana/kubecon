@@ -11,11 +11,12 @@ libraries{
   github{
      source_type = "github"
   }
+  pytest
   owasp_dep_check
   sonarqube
   docker{
     registry = "docker.pkg.github.com"
-    repo_path_prefix = "steven-terrana/nginx-echo" 
+    repo_path_prefix = "steven-terrana/dummy-vuln-app" 
     cred = "github" 
   }
   sysdig_secure{
@@ -23,7 +24,7 @@ libraries{
   }
   kubernetes{
     k8s_credential = "kubeconfig"
-    helm_configuration_repository = "https://github.com/steven-terrana/nginx-echo"
+    helm_configuration_repository = "https://github.com/steven-terrana/dummy-vuln-app"
     helm_configuration_repository_branch = "main"
     helm_configuration_repository_credential = "github" 
     helm_configuration_repository_start_path = "chart"
@@ -31,10 +32,10 @@ libraries{
     promote_previous_image = false 
   }
   owasp_zap{
-    target = "http://nginx-echo:5000"
+    target = "http://prod-dummy-vuln-app:5000/static/index.html"
   }
   google_lighthouse{
-    url = "http://nginx-echo:5000"
+    url = "http://prod-dummy-vuln-appo:5000/static/html"
   }
 }
 
