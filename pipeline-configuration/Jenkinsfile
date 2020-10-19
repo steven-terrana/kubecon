@@ -1,5 +1,5 @@
 parallel "Code Quality": { 
-    unit_test(); 
+    // unit_test(); 
     static_code_analysis() 
 }, "Application Dependency Scan": {
     application_dependency_scan() 
