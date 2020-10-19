@@ -11,7 +11,6 @@ libraries{
   github{
      source_type = "github"
   }
-  pytest
   owasp_dep_check
   sonarqube
   docker{
