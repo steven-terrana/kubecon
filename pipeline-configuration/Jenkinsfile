@@ -6,7 +6,7 @@ parallel "Code Quality": {
 }
 
 build() 
-// scan_container_image() 
+scan_container_image() 
 
 deploy_to prod 
 
