@@ -19,9 +19,6 @@ libraries{
     repo_path_prefix = "steven-terrana/dummy-vuln-app" 
     cred = "github" 
   }
-  sysdig_secure{
-    cred = "sysdig-secure-api"
-  }
   kubernetes{
     k8s_credential = "kubeconfig"
     helm_configuration_repository = "https://github.com/steven-terrana/dummy-vuln-app"
