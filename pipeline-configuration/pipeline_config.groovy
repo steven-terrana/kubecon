@@ -46,6 +46,7 @@ application_environments{
 template_methods{
   unit_test
   static_code_analysis
+  scan_container_image
   application_dependency_scan
   penetration_testing
   accessibility_compliance_scan
