@@ -34,7 +34,7 @@ libraries{
     target = "http://prod-dummy-vuln-app:5000/static/index.html"
   }
   google_lighthouse{
-    url = "http://prod-dummy-vuln-appo:5000/static/index.html"
+    url = "http://prod-dummy-vuln-app:5000/static/index.html"
   }
 }
 
