@@ -5,7 +5,7 @@ libraries{
     images{
       registry = "https://docker.pkg.github.com"
       repository = "boozallen/sdp-images"
-      cred = "github"
+      cred = "githubpublic"
     }
   }
   github{
@@ -19,13 +19,13 @@ libraries{
   docker{
     registry = "docker.pkg.github.com"
     repo_path_prefix = "steven-terrana/dummy-vuln-app" 
-    cred = "github" 
+    cred = "sterrana" 
   }
   kubernetes{
     k8s_credential = "kubeconfig"
     helm_configuration_repository = "https://github.com/steven-terrana/dummy-vuln-app"
     helm_configuration_repository_branch = "main"
-    helm_configuration_repository_credential = "github" 
+    helm_configuration_repository_credential = "sterrana" 
     helm_configuration_repository_start_path = "chart"
     k8s_context = "default-context"
     promote_previous_image = false 
